@@ -11,7 +11,7 @@
     <!-- fontAwesome cdn -->
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
 </head>
-    <body class="h-[1140px] py-1">
+    <body class="bg-white w-full h-[1140px] py-1">
       <!--Navigation bar-->
      <section class="flex items-center justify-between px-6 py-4 bg-white">
       <div class="flex items-center space-x-3">
@@ -25,17 +25,20 @@
       <!-- heart -->
       <div class="flex items-center space-x-4 mt-1">
        <div class="flex items-center justify-center space-x-2 h-[52px] w-[123px] bg-green-50 px-3 py-2 rounded-full">
-           <h1 class="text-black text-[16px] font-bold">0</h1>
-         <img src="./assets/heart.png" alt="Heart" class="h-[30px] w-[30px]" />
+           <h1 class="text-black text-[16px] font-bold" id="heart-count">0</h1>
+          <img src="./assets/heart.png" alt="Heart" class="h-[30px] w-[30px]" onclick="increaseHeartCount()" />
        </div>
        <!-- Coin -->
         <div class="flex items-center justify-center space-x-2 bg-green-50 px-4 py-2 rounded-full h-[52px] w-[106px]">
-          <h1 class="text-black font-semibold">0</h1>
+          <h1 class="text-black font-semibold" id="coin-count">0</h1>
           <img src="./assets/coin.png" alt="Heart" class="h-[24px] w-[24px]" />
        </div>
-         <button class="bg-[#00A63E] text-white px-4 py-2 font-semibold rounded-full w-[127px] h-[52px]">
-            2 Copy
-        </button>
+        <button 
+          class="bg-[#00A63E] text-white px-4 py-2 font-semibold rounded-full w-[127px] h-[52px]" 
+           onclick="handleCopy('2', 'Copy')">
+           2 Copy
+       </button>
+
       </div>
     </section>
          <!-- Banner Section -->
@@ -60,12 +63,14 @@
          <p class="p-color font-bold">999</p>
          <p class="national-all text-gray-400 py-4">All</p>
       <div class="flex space-x-4">
-        <button class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]">
-          <i class="fa-regular fa-copy"></i> Copy
+           <button 
+              class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]" 
+              onclick="handleCopy('999', 'National Emergency Number')">
+             <i class="fa-regular fa-copy"></i> Copy
         </button>
-        <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]">
-           <i class="fa-solid fa-phone"></i>Call
-        </button>
+       <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]" onclick="handleCall('National Emergency Number', 999)">
+           <i class="fa-solid fa-phone"></i> Call
+      </button>
         </div>
     </div>
     <!-- card-02 -->
@@ -79,12 +84,14 @@
          <p class="p-color font-bold">999</p>
          <p class="national-all text-gray-400 py-4">All</p>
       <div class="flex space-x-4">
-        <button class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]">
+       <button 
+          class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]" 
+          onclick="handleCopy('999','Police Helpline Number')">
           <i class="fa-regular fa-copy"></i> Copy
-        </button>
-        <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]">
-           <i class="fa-solid fa-phone"></i>Call
-        </button>
+    </button>
+       <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]"
+            onclick="handleCall('Police Helpline Number', 999)">
+      <i class="fa-solid fa-phone"></i> Call
         </div>
     </div>
     <!-- card-03 -->
@@ -98,12 +105,16 @@
          <p class="p-color font-bold">999</p>
          <p class="national-all text-gray-400 py-4">All</p>
       <div class="flex space-x-4">
-        <button class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]">
-          <i class="fa-regular fa-copy"></i> Copy
-        </button>
-        <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]">
-           <i class="fa-solid fa-phone"></i>Call
-        </button>
+        <button 
+           class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]" 
+           onclick="handleCopy('999','Fire Service Number')">
+      <i class="fa-regular fa-copy"></i> Copy
+    </button>
+        
+        <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]"
+            onclick="handleCall('Fire Service Number', 999)">
+          <i class="fa-solid fa-phone"></i> Call
+         </button>
         </div>
     </div>
     <!-- card-04 -->
@@ -114,15 +125,19 @@
       </div>
          <h1 class="n-emergency text-[24px] font-bold">Ambulance Service</h1>
          <p class="na-emergency text-[18px] text-gray-400">Ambulance </p>
-         <p class="p-color font-bold">999</p>
+         <p class="p-color font-bold">1994-999999</p>
          <p class="national-all text-gray-400 py-4">All</p>
       <div class="flex space-x-4">
-        <button class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]">
+        <button 
+          class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]" 
+          onclick="handleCopy('1994-999999', 'Ambulance Service')">
           <i class="fa-regular fa-copy"></i> Copy
-        </button>
-        <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]">
-           <i class="fa-solid fa-phone"></i>Call
-        </button>
+    </button>
+        <button 
+          class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]"
+          onclick="handleCall('Ambulance Service', '1994-999999')">
+          <i class="fa-solid fa-phone"></i> Call
+    </button>
         </div>
     </div>
     <!-- card-05 -->
@@ -133,15 +148,19 @@
       </div>
          <h1 class="n-emergency text-[24px] font-bold">Women & Child Helpline</h1>
          <p class="na-emergency text-[18px] text-gray-400">Women & Child Helpline</p>
-         <p class="p-color font-bold">999</p>
+         <p class="p-color font-bold">106</p>
          <p class="national-all text-gray-400 py-4">All</p>
       <div class="flex space-x-4">
-        <button class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]">
-          <i class="fa-regular fa-copy"></i> Copy
-        </button>
-        <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]">
-           <i class="fa-solid fa-phone"></i>Call
-        </button>
+         <button 
+          class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]" 
+          onclick="handleCopy('106', 'Women & Child Helpline')">
+         <i class="fa-regular fa-copy"></i> Copy
+    </button>
+         <button 
+         class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]"
+           onclick="handleCall('Women & Child Helpline', '106')">
+          <i class="fa-solid fa-phone"></i> Call
+    </button>
         </div>
     </div>
     <!-- card-06 -->
@@ -152,14 +171,18 @@
       </div>
          <h1 class="n-emergency text-[24px] font-bold">Anti-Corruption Helpline</h1>
          <p class="na-emergency text-[18px] text-gray-400">Anti-Corruption</p>
-         <p class="p-color font-bold">999</p>
+         <p class="p-color font-bold">106</p>
          <p class="national-all text-gray-400 py-4">All</p>
       <div class="flex space-x-4">
-        <button class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]">
+          <button 
+            class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]" 
+           onclick="handleCopy('106', 'Anti-Corruption Helpline')">
           <i class="fa-regular fa-copy"></i> Copy
-        </button>
-        <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]">
-           <i class="fa-solid fa-phone"></i>Call
+       </button>
+          <button 
+           class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]"
+            onclick="handleCall('Anti-Corruption Helpline', '106')">
+           <i class="fa-solid fa-phone"></i> Call
         </button>
         </div>
     </div>
@@ -171,15 +194,19 @@
       </div>
          <h1 class="n-emergency text-[24px] font-bold">Electricity Helpline</h1>
          <p class="na-emergency text-[18px] text-gray-400">Electricity Outage</p>
-         <p class="p-color font-bold">999</p>
+         <p class="p-color font-bold">16216</p>
          <p class="national-all text-gray-400 py-4">All</p>
       <div class="flex space-x-4">
-        <button class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]">
-          <i class="fa-regular fa-copy"></i> Copy
+        <button 
+            class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]" 
+           onclick="handleCopy('16216', 'Electricity Helpline')">
+            <i class="fa-regular fa-copy"></i> Copy
         </button>
-        <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]">
-           <i class="fa-solid fa-phone"></i>Call
-        </button>
+      <button 
+            class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]"
+            onclick="handleCall('Electricity Helpline', '16216')">
+           <i class="fa-solid fa-phone"></i> Call
+    </button>
         </div>
     </div>
     <!-- card-08 -->
@@ -190,15 +217,19 @@
        </div>
          <h1 class="n-emergency text-[24px] font-bold">Brac Helpline</h1>
          <p class="na-emergency text-[18px] text-gray-400">Brac</p>
-         <p class="p-color font-bold">999</p>
+         <p class="p-color font-bold">16445</p>
          <p class="national-all text-gray-400 py-4">All</p>
       <div class="flex space-x-4">
-        <button class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]">
-          <i class="fa-regular fa-copy"></i> Copy
+           <button 
+            class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]" 
+            onclick="handleCopy('16445', 'Brac Helpline')">
+           <i class="fa-regular fa-copy"></i> Copy
         </button>
-        <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]">
-           <i class="fa-solid fa-phone"></i>Call
-        </button>
+           <button 
+              class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]"
+              onclick="handleCall('Brac Helpline', '16445')">
+             <i class="fa-solid fa-phone"></i> Call
+         </button>
         </div>
     </div>
     <!-- card-09 -->
@@ -209,14 +240,18 @@
       </div>
          <h1 class="n-emergency text-[24px] font-bold">Bangladesh Railway Helpline </h1>
          <p class="na-emergency text-[18px] text-gray-400">Bangladesh Railway</p>
-         <p class="p-color font-bold">999</p>
+         <p class="p-color font-bold">163</p>
          <p class="national-all text-gray-400 py-4">All</p>
       <div class="flex space-x-4">
-        <button class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]">
-          <i class="fa-regular fa-copy"></i> Copy
-        </button>
-        <button class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]">
-           <i class="fa-solid fa-phone"></i>Call
+         <button 
+             class="copy-btn bg-gray-100 px-4 py-2 rounded-md h-[40px] w-[182px]" 
+             onclick="handleCopy('163', 'Bangladesh Railway Helpline')">
+            <i class="fa-regular fa-copy"></i> Copy
+       </button>
+           <button 
+           class="call-btn bg-green-500 text-white px-4 py-2 rounded-md h-[40px] w-[182px]"
+           onclick="handleCall('Bangladesh Railway Helpline', '163')">
+           <i class="fa-solid fa-phone"></i> Call
         </button>
         </div>
     </div>
@@ -227,10 +262,11 @@
     <div class="flex items-center gap-2">
          <i class="fa-regular fa-clock text-gray-500 text-2xl"></i>
         <h1 class="text-black-500 font-semibold text-lg">Call History</h1>
+         <div id="history-list" class="space-y-2"></div> 
     </div>
-        <button class="clear-btn1 bg-[#00A63E] text-white px-4 py-2 font-semibold rounded-full w-[127px] h-[52px] hover:bg-[#008c2e] transition duration-300">
-        Clear
-       </button>
+      <button class="clear-btn1 bg-[#00A63E] text-white px-4 py-2 font-semibold rounded-full w-[127px] h-[52px] hover:bg-[#008c2e] transition duration-300" onclick="clearHistory()">
+       Clear
+     </button>
   </div>
     <div class="space-y-2">
       <div class="flex justify-between">
