@@ -3,3 +3,6 @@ How do you create and insert a new element into the DOM. Answer: document.body.a
 What is Event Bubbling and how does it work? Bubbling is a javascript important  aspect in javascript and where event starts the crucial target element and it works with DOM. When You click a button inside it will reflects or bubble parent elements.
 What is Event Delegation in JavaScript? Why is it useful? Answer: Event delegation is a important technique in javascript , you can attach a single event listener to a parent instead of single or individual child elements. It is very useful to improved performance , dynamic elements as well as simple code. 
 What is the difference between preventDefault() and stopPropagation() methods? Answer : preventDefault() stop the by default action and it stops the submitting. On the other hand, stopPropagation() stops bubbling in javascript.
+
+Attention Please : 80% Browser Size: The layout looks and works as expected.
+100% Browser Size: The "clear section" moves below the layout, showing responsiveness issues during live deployment. It should align to the right but moves down.
