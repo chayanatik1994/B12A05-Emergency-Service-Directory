@@ -11,7 +11,8 @@
     <!-- fontAwesome cdn -->
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-[#f4f5f7]h-[1140px] py-1 ">
+    <body class="h-[1140px] py-1">
+      <!--Navigation bar-->
      <section class="flex items-center justify-between px-6 py-4 bg-white">
       <div class="flex items-center space-x-3">
         <img src="/assets/logo.png" alt="Logo" class="h-[50px] w-[50px] object-contain mb-[2px]" />
@@ -46,10 +47,10 @@
      </div>
    </section>
    <!-- Card Section -->
-    <div class="flex w-full h-[360px] px-10 gap-25">
-      <section class="px-6 py-4 bg-white mt-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-[1370px] h-[1140px]">
+    <div class="flex flex-wrap w-full h-[360px] px-10 gap-25">
+      <section class="px-6 py-4 bg-green-50 mt-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-[1370px] h-[1140px]">
         <!-- card-01 -->
-       <div class="h-[360px] w-full flex flex-col bg-white  p-4 rounded-lg shadow-lg">
+       <div class="h-[360px] w-full flex flex-col bg-white p-4 rounded-lg shadow-lg">
           <div class="flex items-center space-x-4 justify-between">
           <img src="./assets/emergency.png" class="h-[60px] w-[60px]"/>
           <i class="fa-regular fa-heart bg-white-100"></i>
@@ -108,7 +109,7 @@
     <!-- card-04 -->
        <div class="h-[360px] w-full flex flex-col bg-white  p-4 rounded-lg shadow-lg">
           <div class="flex items-center space-x-4 justify-between">
-          <img src="./assets/emergency.png" class="h-[60px] w-[60px]"/>
+          <img src="./assets/ambulance.png" class="h-[60px] w-[60px]"/>
           <i class="fa-regular fa-heart bg-white-100"></i>
       </div>
          <h1 class="n-emergency text-[24px] font-bold">Ambulance Service</h1>
@@ -221,7 +222,7 @@
     </div>
     <!-- Call History -->
       </section >
-     <aside class="w-[400px] h-[1140px] p-4 bg-gray-100 border-l border-gray-300">
+     <aside class="w-[400px] h-[1140px] p-4">
   <div class="flex items-center mb-4 justify-between">
     <div class="flex items-center gap-2">
          <i class="fa-regular fa-clock text-gray-500 text-2xl"></i>
@@ -259,5 +260,6 @@
     </div>
   </aside>
 </div>
+<script src="script.js" ></script>
 </body>
 </html>
